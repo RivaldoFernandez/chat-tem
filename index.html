@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mi Dashboard</h1>
+    <div class="button-container">
+      <button onclick="selectUser(1)">Seleccionar Usuario 1</button>
+      <button onclick="selectUser(2)">Seleccionar Usuario 2</button>
+    </div>
+
+    <script>
+      function selectUser(userId) {
+        // Guardar la selección en el almacenamiento local
+        localStorage.setItem("selectedUser", userId);
+        // Redirigir al chat
+        window.location.href = "/chat.html";
+      }
+    </script>
+  </body>
+</html>
